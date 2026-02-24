@@ -1,0 +1,84 @@
+/*
+ * ff_fferror.h
+ *
+ * Copyright (c) 2003 Bilibili
+ * Copyright (c) 2003 Fabrice Bellard
+ * Copyright (c) 2013 Zhang Rui <bbcallen@gmail.com>
+ *
+ * This file is part of ijkPlayer.
+ *
+ * ijkPlayer is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * ijkPlayer is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with ijkPlayer; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+
+#ifndef FFPLAY__FF_FFERROR_H
+#define FFPLAY__FF_FFERROR_H
+
+#define EIJK_FAILED             -1
+#define EIJK_OUT_OF_MEMORY      -2
+#define EIJK_INVALID_STATE      -3
+#define EIJK_NULL_IS_PTR        -4
+
+#define CYPRESS_PLAYER_ERROR_BASE                       -90000
+#define CYPRESS_PLAYER_ERROR_UNKNOWN                    (CYPRESS_PLAYER_ERROR_BASE - 1)
+
+#define CYPRESS_PLAYER_ERROR_NOMEM                      (CYPRESS_PLAYER_ERROR_BASE - 1001)
+#define CYPRESS_PLAYER_ERROR_INVALID_ARG                (CYPRESS_PLAYER_ERROR_BASE - 1002)
+#define CYPRESS_PLAYER_ERROR_INVALID_DATA               (CYPRESS_PLAYER_ERROR_BASE - 1003)
+#define CYPRESS_PLAYER_ERROR_SYSTEM_ERROR               (CYPRESS_PLAYER_ERROR_BASE - 1004)
+
+#define CYPRESS_PLAYER_ERROR_IO                         (CYPRESS_PLAYER_ERROR_BASE - 2000)
+#define CYPRESS_PLAYER_ERROR_IO_FILE_ACCESS_FAILED      (CYPRESS_PLAYER_ERROR_IO - 101)
+#define CYPRESS_PLAYER_ERROR_IO_FILE_NOT_FOUND          (CYPRESS_PLAYER_ERROR_IO - 102)
+
+#define CYPRESS_PLAYER_ERROR_IO_HTTP                    (CYPRESS_PLAYER_ERROR_IO - 200)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_REDIRECT           (CYPRESS_PLAYER_ERROR_IO_HTTP - 1)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_BAD_REQUEST        (CYPRESS_PLAYER_ERROR_IO_HTTP - 2)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_UNAUTHORIZED       (CYPRESS_PLAYER_ERROR_IO_HTTP - 3)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_FORBIDDEN          (CYPRESS_PLAYER_ERROR_IO_HTTP - 4)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_NOT_FOUND          (CYPRESS_PLAYER_ERROR_IO_HTTP - 5)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_TIMEOUT            (CYPRESS_PLAYER_ERROR_IO_HTTP - 6)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_OTHER_4XX          (CYPRESS_PLAYER_ERROR_IO_HTTP - 7)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_SERVER_ERROR       (CYPRESS_PLAYER_ERROR_IO_HTTP - 8)
+#define CYPRESS_PLAYER_ERROR_IO_HTTP_USERINTERRUPT      (CYPRESS_PLAYER_ERROR_IO_HTTP - 9)
+
+#define CYPRESS_PLAYER_ERROR_IO_PROTOCOL_NOT_FOUND      (CYPRESS_PLAYER_ERROR_IO - 301)
+
+#define CYPRESS_PLAYER_ERROR_STREAM                     (CYPRESS_PLAYER_ERROR_BASE - 3000)
+#define CYPRESS_PLAYER_ERROR_STREAM_INFO_NOT_FOUND      (CYPRESS_PLAYER_ERROR_STREAM - 1)
+#define CYPRESS_PLAYER_ERROR_STREAM_NO_PLAYABLE_AV      (CYPRESS_PLAYER_ERROR_STREAM - 2)
+
+#define CYPRESS_PLAYER_ERROR_DEMUXER                    (CYPRESS_PLAYER_ERROR_BASE - 4000)
+#define CYPRESS_PLAYER_ERROR_DEMUXER_READ_FAILED        (CYPRESS_PLAYER_ERROR_DEMUXER - 1)
+#define CYPRESS_PLAYER_ERROR_DEMUXER_NOT_FOUND          (CYPRESS_PLAYER_ERROR_DEMUXER - 2)
+#define CYPRESS_PLAYER_ERROR_DEMUXER_INIT_FAILED        (CYPRESS_PLAYER_ERROR_DEMUXER - 3)
+
+#define CYPRESS_PLAYER_ERROR_DECODER                    (CYPRESS_PLAYER_ERROR_BASE - 5000)
+#define CYPRESS_PLAYER_ERROR_DECODER_NOT_FOUND          (CYPRESS_PLAYER_ERROR_DECODER - 1)
+#define CYPRESS_PLAYER_ERROR_DECODER_INIT_FAILED        (CYPRESS_PLAYER_ERROR_DECODER - 2)
+#define CYPRESS_PLAYER_ERROR_DECODE_FAILED              (CYPRESS_PLAYER_ERROR_DECODER - 3)
+
+#define CYPRESS_PLAYER_ERROR_AUDIO                      (CYPRESS_PLAYER_ERROR_BASE - 6000)
+#define CYPRESS_PLAYER_ERROR_AUDIO_OPEN_FAILED          (CYPRESS_PLAYER_ERROR_AUDIO - 1)
+
+#define CYPRESS_PLAYER_ERROR_VIDEO                      (CYPRESS_PLAYER_ERROR_BASE - 7000)
+#define CYPRESS_PLAYER_ERROR_VIDEO_OPEN_FAILED          (CYPRESS_PLAYER_ERROR_VIDEO - 1)
+
+#define CYPRESS_PLAYER_ERROR_SUBTITLE                   (CYPRESS_PLAYER_ERROR_BASE - 8000)
+#define CYPRESS_PLAYER_ERROR_SUBTITLE_OPEN_FAILED       (CYPRESS_PLAYER_ERROR_SUBTITLE - 1)
+
+int ff_err2cypress_err(int err);
+
+#endif
+
