@@ -1,4 +1,25 @@
-# ijkplayer
+# CyNativePlayer
+
+CyNativePlayer is a video player modified from [ijkplayer](https://github.com/Bilibili/ijkplayer).
+
+### Build
+
+Use cmake to build the project, see [config.sh](config.sh) for some detail.
+
+FFmpeg: there are prebuilt binaries (built from [ijkffmpeg](https://github.com/Bilibili/FFmpeg)) under lib folder. You can also build FFmpeg by yourself, but remember to update header files in **src/inc/ffmpeg**.
+
+### Use
+
+Now the player only support Android platform and only has native interface.
+
+You could package the following libraries to your apk and use JNI to call it.
+
+- libijkplayer.so
+- libijksdl.so
+- libnativeplayer.so
+- libijkffmpeg.so
+
+## ijkplayer
 
  Platform | Build Status
  -------- | ------------
